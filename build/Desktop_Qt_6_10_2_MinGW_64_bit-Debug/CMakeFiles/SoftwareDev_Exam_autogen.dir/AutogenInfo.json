@@ -181,9 +181,21 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/battle.h",
+			"MU",
+			"EWIEGA46WW/moc_battle.cpp",
+			null
+		],
+		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/character.h",
 			"MU",
 			"EWIEGA46WW/moc_character.cpp",
+			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.h",
+			"MU",
+			"EWIEGA46WW/moc_game.cpp",
 			null
 		],
 		[
@@ -259,7 +271,17 @@
 	"SOURCES" : 
 	[
 		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/battle.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/character.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.cpp",
 			"MU",
 			null
 		],

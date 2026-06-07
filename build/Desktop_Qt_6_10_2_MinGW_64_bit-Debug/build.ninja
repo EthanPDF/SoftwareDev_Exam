@@ -81,6 +81,22 @@ build CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj: CXX_COMPILER__SoftwareDev
   OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
   OBJECT_FILE_DIR = CMakeFiles\SoftwareDev_Exam.dir
 
+build CMakeFiles/SoftwareDev_Exam.dir/game.cpp.obj: CXX_COMPILER__SoftwareDev_Exam_unscanned_Debug C$:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.cpp || cmake_object_order_depends_target_SoftwareDev_Exam
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SoftwareDev_Exam.dir\game.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/SoftwareDev_Exam_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
+  OBJECT_FILE_DIR = CMakeFiles\SoftwareDev_Exam.dir
+
+build CMakeFiles/SoftwareDev_Exam.dir/battle.cpp.obj: CXX_COMPILER__SoftwareDev_Exam_unscanned_Debug C$:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/battle.cpp || cmake_object_order_depends_target_SoftwareDev_Exam
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SoftwareDev_Exam.dir\battle.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/SoftwareDev_Exam_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
+  OBJECT_FILE_DIR = CMakeFiles\SoftwareDev_Exam.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SoftwareDev_Exam
@@ -89,7 +105,7 @@ build CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj: CXX_COMPILER__SoftwareDev
 #############################################
 # Link the executable SoftwareDev_Exam.exe
 
-build SoftwareDev_Exam.exe: CXX_EXECUTABLE_LINKER__SoftwareDev_Exam_Debug CMakeFiles/SoftwareDev_Exam.dir/SoftwareDev_Exam_autogen/mocs_compilation.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/main.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/character.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a || SoftwareDev_Exam_autogen SoftwareDev_Exam_autogen_timestamp_deps
+build SoftwareDev_Exam.exe: CXX_EXECUTABLE_LINKER__SoftwareDev_Exam_Debug CMakeFiles/SoftwareDev_Exam.dir/SoftwareDev_Exam_autogen/mocs_compilation.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/main.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/character.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/game.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/battle.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a || SoftwareDev_Exam_autogen SoftwareDev_Exam_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = C:/Qt/6.10.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
