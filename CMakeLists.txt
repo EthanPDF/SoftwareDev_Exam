@@ -8,6 +8,7 @@ qt_standard_project_setup()
 qt_add_executable(SoftwareDev_Exam
     main.cpp
     character.h character.cpp
+    monster.h monster.cpp
 
 )
 

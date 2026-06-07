@@ -1,20 +1,28 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <vector>
-#include "monsters.h"
+#include "monster.h"
 
 class Character
 {
 public:
     Character();
-    void attack(Monsters m);
-    void takDamage(int dmg);
-    void addMonster(Monsters m);
-    void replaceMonster(Monsters m);
+    Character(std::string name,int HP,int Strength);
+    void setName(std::string name);
+
+    int getHP();
+    int setHP();
+    int getStrength();
+    int setStrength();
+
+    void addMonster(Monster m);
+    void replaceMonster(Monster m);
+
 
 private:
+    std::string name;
     int HP, Strength;
-    std::vector<Monsters> PlayerMonsters;
+    std::vector<Monster> PlayerMonsters;
 };
 
 #endif // CHARACTER_H
