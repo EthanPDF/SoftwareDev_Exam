@@ -185,12 +185,6 @@
 			"MU",
 			"EWIEGA46WW/moc_character.cpp",
 			null
-		],
-		[
-			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monsters.h",
-			"MU",
-			"EWIEGA46WW/moc_monsters.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -265,11 +259,6 @@
 		],
 		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monsters.cpp",
 			"MU",
 			null
 		]
