@@ -1,14 +1,15 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <vector>
+#include <string>
 #include "monster.h"
 
 class Character
 {
 public:
     Character();
-    Character(std::string name,int Hp,int Strength);
-    void setName(std::string name);
+    Character(std::string Name,int Hp,int Strength);
+    void setName(std::string Name);
 
     int getHp();
     void setHp(int Hp);
@@ -21,7 +22,7 @@ public:
 
 
 private:
-    std::string name;
+    std::string Name;
     int Hp, Strength;
     std::vector<Monster> PlayerMonsters;
 };
