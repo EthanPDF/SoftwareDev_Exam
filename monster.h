@@ -6,18 +6,18 @@ class Monster
 {
 public:
     Monster();
-    Monster(std::string name, int HP, int Strength);
+    Monster(std::string Name, int Hp, int Strength);
 
-    int getHP();
-    int setHp();
+    int getHp();
+    void setHp(int Hp);
 
     int getStrength();
 
     std::string getName();
 
 private:
-    std::string name;
-    int HP;
+    std::string Name;
+    int Hp;
     int Strength;
 };
 

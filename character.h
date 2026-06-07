@@ -7,13 +7,14 @@ class Character
 {
 public:
     Character();
-    Character(std::string name,int HP,int Strength);
+    Character(std::string name,int Hp,int Strength);
     void setName(std::string name);
 
-    int getHP();
-    int setHP();
+    int getHp();
+    void setHp(int Hp);
+
     int getStrength();
-    int setStrength();
+    void setStrength(int Strength);
 
     void addMonster(Monster m);
     void replaceMonster(Monster m);
@@ -21,7 +22,7 @@ public:
 
 private:
     std::string name;
-    int HP, Strength;
+    int Hp, Strength;
     std::vector<Monster> PlayerMonsters;
 };
 
