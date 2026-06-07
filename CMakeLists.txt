@@ -7,6 +7,8 @@ qt_standard_project_setup()
 
 qt_add_executable(SoftwareDev_Exam
     main.cpp
+    character.h character.cpp
+    monsters.h monsters.cpp
 )
 
 target_link_libraries(SoftwareDev_Exam
