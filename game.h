@@ -3,6 +3,7 @@
 #include <vector>
 #include "character.h"
 #include "monster.h"
+#include "battle.h"
 
 class Game
 {
