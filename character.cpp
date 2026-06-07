@@ -34,11 +34,12 @@ void Character::addMonster(Monster m){
         PlayerMonsters.push_back(m);
     } else{
         std::cout << "Max limit reached, replace a monster\n";
+        replaceMonster(m);
     }
 }
 void Character::replaceMonster(Monster m){
     for(int i =0; i < PlayerMonsters.size(); i++){
-        std::cout << i << ": " << PlayerMonsters[i].getName() << "/n";
+        std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
     }
 
     int choice;
