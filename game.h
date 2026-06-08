@@ -15,7 +15,7 @@ public:
     void leave();
     void fight();
 
-    Monster chooseMonster();
+    Monster& chooseMonster();
     bool allMonstersDefeated();
 
 private:

@@ -57,24 +57,27 @@ void leave(){
     }
 
 }
-Monster Game::chooseMonster(){
+Monster& Game::chooseMonster(){
     for(int i =0; i < MonstersInGame.size(); i++){
         std::cout << i << ": " << MonstersInGame[i].getName() << "\n";
     }
 
     int Choice;
-    std::cout << "Choose a monster to fight";
+    std::cout << "Choose a monster to fight (1,2...) ";
     std::cin >> Choice;
 
     return MonstersInGame[Choice];
 }
 
 void Game::fight(){
-    Monster Chosen = chooseMonster();
+    std::cout << "What enemy to fight? ";
+    Monster& enemy = chooseMonster();
+    std::cout << "Which monster to fight with? ";
+    Monster& playerChosen = Player.getMonster();
 
     Battle battle;
 
-    bool PlayerWon = battle.startBattle(Player, Chosen);
+    bool PlayerWon = battle.startBattle(Player, playerChosen, enemy);
 
     if(PlayerWon){
         std::cout << "You win!\n";
@@ -82,7 +85,7 @@ void Game::fight(){
         std::string AddMonster;
         std::cin >> AddMonster;
         if(AddMonster == "y"){
-            Player.addMonster(Chosen);
+            Player.addMonster(enemy);
         }
     }
 }

@@ -13,6 +13,10 @@ void Character::setName(std::string Name){
     this -> Name = Name;
 }
 
+std::string Character::getName(){
+    return Name;
+}
+
 int Character::getHp(){
     return Hp;
 }
@@ -51,4 +55,33 @@ void Character::replaceMonster(Monster m){
         std::cout << "Invalid \n";
     }
 
+}
+
+Monster& Character::getMonster(){
+    for(int i =0; i < PlayerMonsters.size(); i++){
+        std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
+    }
+
+    int choice;
+
+    while(true){
+        std::cout << "Which monster to fight with? ";
+        std::cin >> choice;
+
+        if(choice >= 0 && choice < PlayerMonsters.size()){
+            return PlayerMonsters[choice];
+        } else{
+            std::cout << "Invalid\n";
+        }
+    }
+}
+
+bool Character::checkIfMonstersDead(){
+
+    for(int i = 0; i < PlayerMonsters.size(); i++){
+        if(PlayerMonsters[i].getHp() > 0){
+            return false;
+        }
+    }
+    return true;
 }
