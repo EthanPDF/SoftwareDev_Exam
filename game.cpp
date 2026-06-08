@@ -1,5 +1,6 @@
 #include "game.h"
 #include <iostream>
+#include "battle.h"
 
 Game::Game() {
     Player = Character("",0,0);
@@ -46,34 +47,47 @@ void Game::createCharacter(){
     }
 }
 
-void leave(){
-    std::cout << "Leave? (y/n)";
-    std::string Leave;
-    std::cin >> Leave;
-    if(Leave == "y"){
-        return;
+bool Game::leave(){
+
+    std::cout << "Leave? (y/n): ";
+
+    std::string choice;
+    std::cin >> choice;
+
+
+    if(choice == "y"){
+    return true;
     } else{
-        std::cout << "Continuing game";
+        return false;
     }
 
 }
 Monster& Game::chooseMonster(){
-    for(int i =0; i < MonstersInGame.size(); i++){
+
+    for(int i = 0; i < MonstersInGame.size(); i++){
         std::cout << i << ": " << MonstersInGame[i].getName() << "\n";
     }
 
     int Choice;
-    std::cout << "Choose a monster to fight (1,2...) ";
-    std::cin >> Choice;
 
-    return MonstersInGame[Choice];
+    while (true) {
+        std::cout << "Choose a monster: ";
+        std::cin >> Choice;
+
+        if (Choice >= 0 && Choice < MonstersInGame.size()) {
+            return MonstersInGame[Choice];
+        } else {
+            std::cout << "Invalid choice\n";
+        }
+    }
+
 }
 
 void Game::fight(){
     std::cout << "What enemy to fight? ";
     Monster& enemy = chooseMonster();
     std::cout << "Which monster to fight with? ";
-    Monster& playerChosen = Player.getMonster();
+    Monster* playerChosen = &Player.getMonster();
 
     Battle battle;
 

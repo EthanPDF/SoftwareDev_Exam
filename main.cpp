@@ -1,19 +1,37 @@
-#include <QCoreApplication>
+#include <iostream>
+#include <ctime>
+#include "game.h"
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
+int main() {
+    srand(time(0));
 
-    // Set up code that uses the Qt event loop here.
-    // Call a.quit() or a.exit() to quit the application.
-    // A not very useful example would be including
-    // #include <QTimer>
-    // near the top of the file and calling
-    // QTimer::singleShot(5000, &a, &QCoreApplication::quit);
-    // which quits the application after 5 seconds.
+    Game game;
+    game.createCharacter();
 
-    // If you do not need a running Qt event loop, remove the call
-    // to a.exec() or use the Non-Qt Plain C++ Application template.
+    while (true) {
+        std::cout << "\n--- MENU ---\n";
+        std::cout << "1. Fight\n";
+        std::cout << "2. Leave\n";
 
-    return a.exec();
+        int choice;
+        std::cin >> choice;
+
+        if (choice == 1) {
+            game.fight();
+        }
+        else if (choice == 2) {
+            std::cout << "Goodbye!\n";
+            break;
+        }
+        else {
+            std::cout << "Invalid input\n";
+        }
+
+        if (game.allMonstersDefeated()) {
+            std::cout << "\nYou defeated all enemies! You win!\n";
+            break;
+        }
+    }
+
+    return 0;
 }

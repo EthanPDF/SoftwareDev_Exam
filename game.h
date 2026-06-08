@@ -3,16 +3,16 @@
 #include <vector>
 #include "character.h"
 #include "monster.h"
-#include "battle.h"
+
 
 class Game
 {
 public:
     Game();
     bool startWithMonsters();
+    bool leave();
 
     void createCharacter();
-    void leave();
     void fight();
 
     Monster& chooseMonster();
