@@ -1,5 +1,6 @@
 #include "battle.h"
 #include <iostream>
+#include <cstdlib>
 
 Battle::Battle() {}
 
