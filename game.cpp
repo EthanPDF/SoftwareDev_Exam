@@ -5,14 +5,8 @@
 Game::Game() {
     Player = Character("",0,0);
 
-    MonstersInGame.push_back(Monster("Horse",4,1)); //Monster initialized with Name, Hp, strength
-    MonstersInGame.push_back(Monster("WeakGoblin",4,2));
-    MonstersInGame.push_back(Monster("Warrior Goblin",8,3));
-    MonstersInGame.push_back(Monster("Goblin General",10,4));
-    MonstersInGame.push_back(Monster("Goblin king",15,5));
-    MonstersInGame.push_back(Monster("Bandit",20,8));
-    MonstersInGame.push_back(Monster("Ogres",30,10));
-    MonstersInGame.push_back(Monster("Dragon",100,11));
+    resetEnemies();
+
 }
 
 
@@ -25,6 +19,20 @@ bool Game::startWithMonsters(){
     } else {
         return false;
     }
+}
+
+void Game::resetEnemies(){//Resets monsters in game
+
+    MonstersInGame.clear();
+
+    MonstersInGame.push_back(Monster("Horse",4,1)); //Monster initialized with Name, Hp, strength
+    MonstersInGame.push_back(Monster("WeakGoblin",4,2));
+    MonstersInGame.push_back(Monster("Warrior Goblin",8,3));
+    MonstersInGame.push_back(Monster("Goblin General",10,4));
+    MonstersInGame.push_back(Monster("Goblin king",15,5));
+    MonstersInGame.push_back(Monster("Bandit",20,8));
+    MonstersInGame.push_back(Monster("Ogres",30,10));
+    MonstersInGame.push_back(Monster("Dragon",100,11));
 }
 
 void Game::createCharacter(){
@@ -62,7 +70,7 @@ bool Game::leave(){
     }
 
 }
-int Game::chooseMonsterIndex(){
+int Game::chooseMonsterIndex(){ //Chooses a monster (But returns an int value which is position of chosen monster)
 
     for(int i = 0; i < MonstersInGame.size(); i++){
         std::cout << i << ": " << MonstersInGame[i].getName() << "\n";
@@ -83,7 +91,8 @@ int Game::chooseMonsterIndex(){
 
 }
 
-void Game::fight(){
+void Game::fight(){ //Fight method, uses the battle logic to start and fight fights
+
     std::cout << "What enemy to fight? ";
     int index = chooseMonsterIndex();
     Monster& enemy = MonstersInGame[index];
@@ -107,6 +116,10 @@ void Game::fight(){
             Player.addMonster(enemy);
         }
         MonstersInGame.erase(MonstersInGame.begin() + index); //Erase monster after adding it, or not
+    } else{ //If defeated
+        std::cout << "You lost!\n" << "Restarting...";
+        resetEnemies();
+        createCharacter();
     }
 }
 

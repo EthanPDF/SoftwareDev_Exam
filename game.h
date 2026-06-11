@@ -12,6 +12,7 @@ public:
     bool startWithMonsters();
     bool leave();
 
+    void resetEnemies();
     void createCharacter();
     void fight();
 
