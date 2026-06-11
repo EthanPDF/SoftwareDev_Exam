@@ -24,10 +24,12 @@ public:
 
     bool checkIfMonstersDead();
 
+    void resetHp();
+
 
 private:
     std::string Name;
-    int Hp, Strength;
+    int Hp, Strength, maxHp;
     std::vector<Monster> PlayerMonsters;
 };
 

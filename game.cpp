@@ -62,7 +62,7 @@ bool Game::leave(){
     }
 
 }
-Monster& Game::chooseMonster(){
+int Game::chooseMonsterIndex(){
 
     for(int i = 0; i < MonstersInGame.size(); i++){
         std::cout << i << ": " << MonstersInGame[i].getName() << "\n";
@@ -75,7 +75,7 @@ Monster& Game::chooseMonster(){
         std::cin >> Choice;
 
         if (Choice >= 0 && Choice < MonstersInGame.size()) {
-            return MonstersInGame[Choice];
+            return Choice;
         } else {
             std::cout << "Invalid choice\n";
         }
@@ -85,7 +85,8 @@ Monster& Game::chooseMonster(){
 
 void Game::fight(){
     std::cout << "What enemy to fight? ";
-    Monster& enemy = chooseMonster();
+    int index = chooseMonsterIndex();
+    Monster& enemy = MonstersInGame[index];
     std::cout << "Which monster to fight with? ";
     Monster* playerChosen = &Player.getMonster();
 
@@ -95,12 +96,17 @@ void Game::fight(){
 
     if(PlayerWon){
         std::cout << "You win!\n";
+
+        Player.resetHp();
+        std::cout << "Hp reset!";
+
         std::cout << "Add monster? (y/n)";
         std::string AddMonster;
         std::cin >> AddMonster;
         if(AddMonster == "y"){
             Player.addMonster(enemy);
         }
+        MonstersInGame.erase(MonstersInGame.begin() + index); //Erase monster after adding it, or not
     }
 }
 

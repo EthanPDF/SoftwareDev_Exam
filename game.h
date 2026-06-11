@@ -15,7 +15,7 @@ public:
     void createCharacter();
     void fight();
 
-    Monster& chooseMonster();
+    int chooseMonsterIndex();
     bool allMonstersDefeated();
 
 private:

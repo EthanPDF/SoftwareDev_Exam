@@ -13,12 +13,16 @@ public:
 
     int getStrength();
 
+    int getMaxHp();
+
     std::string getName();
 
 private:
     std::string Name;
     int Hp;
     int Strength;
+    int maxHp;
+
 };
 
 #endif // MONSTER_H

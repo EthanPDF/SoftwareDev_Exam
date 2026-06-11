@@ -7,6 +7,7 @@ Character::Character(std::string Name,int Hp,int Strength){
     this -> Name = Name;
     this -> Hp = Hp;
     this -> Strength = Strength;
+    this -> maxHp = Hp;
 }
 
 void Character::setName(std::string Name){
@@ -57,7 +58,7 @@ void Character::replaceMonster(Monster m){
 
 }
 
-Monster& Character::getMonster(){
+Monster& Character::getMonster(){ //Gets a monster to figth with
     for(int i =0; i < PlayerMonsters.size(); i++){
         std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
     }
@@ -84,4 +85,12 @@ bool Character::checkIfMonstersDead(){
         }
     }
     return true;
+}
+
+void Character::resetHp(){ //Reset Hp of Character and Monsters
+    Hp = maxHp;
+
+    for(int i = 0; i < PlayerMonsters.size(); i++){
+        PlayerMonsters[i].setHp(PlayerMonsters[i].getMaxHp());
+    }
 }
