@@ -21,7 +21,7 @@ private:
     std::string Name;
     int Hp;
     int Strength;
-    int maxHp;
+    int MaxHp;
 
 };
 

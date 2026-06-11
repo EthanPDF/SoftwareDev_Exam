@@ -29,7 +29,7 @@ public:
 
 private:
     std::string Name;
-    int Hp, Strength, maxHp;
+    int Hp, Strength, MaxHp;
     std::vector<Monster> PlayerMonsters;
 };
 

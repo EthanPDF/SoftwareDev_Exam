@@ -7,7 +7,7 @@ Monster::Monster(std::string Name, int Hp, int Strength){
     this -> Name = Name;
     this -> Hp = Hp;
     this -> Strength = Strength;
-    this -> maxHp = Hp;
+    this -> MaxHp = Hp;
 }
 
 int Monster::getHp(){
@@ -23,7 +23,7 @@ int Monster::getStrength(){
 }
 
 int Monster::getMaxHp(){
-    return maxHp;
+    return MaxHp;
 }
 
 std::string Monster::getName(){

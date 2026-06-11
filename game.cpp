@@ -11,7 +11,7 @@ Game::Game() {
 
 
 bool Game::startWithMonsters(){
-    std::cout << "Start with 2 horses? y/n";
+    std::cout << "Start with 2 horses? y/n ";
     std::string Choice;
     std::cin >> Choice;
     if(Choice == "y"){
@@ -42,11 +42,8 @@ void Game::createCharacter(){
     std::cout << "Choose a name: ";
     std::cin >> Name;
 
-    std::cout << "Choose Hp (Recommended 10): ";
-    std::cin >> Hp;
-
-    std::cout << "Choose Strength (Recommended 1): ";
-    std::cin >> Strength;
+    Hp =10;
+    Strength = 1;
 
     Player = Character(Name, Hp, Strength);
     if(startWithMonsters()){
@@ -59,11 +56,11 @@ bool Game::leave(){
 
     std::cout << "Leave? (y/n): ";
 
-    std::string choice;
-    std::cin >> choice;
+    std::string Choice;
+    std::cin >> Choice;
 
 
-    if(choice == "y"){
+    if(Choice == "y"){
     return true;
     } else{
         return false;
@@ -95,29 +92,29 @@ void Game::fight(){ //Fight method, uses the battle logic to start and fight fig
 
     std::cout << "What enemy to fight? ";
     int index = chooseMonsterIndex();
-    Monster& enemy = MonstersInGame[index];
+    Monster& Enemy = MonstersInGame[index];
     std::cout << "Which monster to fight with? ";
-    Monster* playerChosen = &Player.getMonster();
+    Monster* PlayerChosen = &Player.getMonster();
 
     Battle battle;
 
-    bool PlayerWon = battle.startBattle(Player, playerChosen, enemy);
+    bool PlayerWon = battle.startBattle(Player, PlayerChosen, Enemy);
 
     if(PlayerWon){
         std::cout << "You win!\n";
 
         Player.resetHp();
-        std::cout << "Hp reset!";
+        std::cout << "Hp reset!\n";
 
         std::cout << "Add monster? (y/n)";
         std::string AddMonster;
         std::cin >> AddMonster;
         if(AddMonster == "y"){
-            Player.addMonster(enemy);
+            Player.addMonster(Enemy);
         }
         MonstersInGame.erase(MonstersInGame.begin() + index); //Erase monster after adding it, or not
     } else{ //If defeated
-        std::cout << "You lost!\n" << "Restarting...";
+        std::cout << "You lost!\n" << "Restarting...\n";
         resetEnemies();
         createCharacter();
     }
