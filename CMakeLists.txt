@@ -12,6 +12,7 @@ qt_add_executable(SoftwareDev_Exam
     game.h game.cpp
     battle.h battle.cpp
     status.h status.cpp
+    statuseffect.h statuseffect.cpp
 
 )
 
