@@ -203,6 +203,12 @@
 			"MU",
 			"EWIEGA46WW/moc_monster.cpp",
 			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/status.h",
+			"MU",
+			"EWIEGA46WW/moc_status.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -292,6 +298,11 @@
 		],
 		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monster.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/status.cpp",
 			"MU",
 			null
 		]

@@ -11,6 +11,7 @@ qt_add_executable(SoftwareDev_Exam
     monster.h monster.cpp
     game.h game.cpp
     battle.h battle.cpp
+    status.h status.cpp
 
 )
 
