@@ -187,6 +187,12 @@
 			null
 		],
 		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/cave.h",
+			"MU",
+			"EWIEGA46WW/moc_cave.cpp",
+			null
+		],
+		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/character.h",
 			"MU",
 			"EWIEGA46WW/moc_character.cpp",
@@ -290,6 +296,11 @@
 	[
 		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/battle.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/cave.cpp",
 			"MU",
 			null
 		],

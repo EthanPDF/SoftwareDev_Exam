@@ -63,7 +63,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 26,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
@@ -182,7 +182,9 @@
 				7,
 				9,
 				11,
-				13
+				13,
+				15,
+				17
 			]
 		}
 	],
@@ -259,7 +261,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				14
+				18
 			]
 		},
 		{
@@ -272,7 +274,9 @@
 				7,
 				9,
 				11,
-				13
+				13,
+				15,
+				17
 			]
 		},
 		{
@@ -284,14 +288,16 @@
 				6,
 				8,
 				10,
-				12
+				12,
+				14,
+				16
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				15
+				19
 			]
 		}
 	],
@@ -374,6 +380,28 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "statuseffect.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "item.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "item.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "cave.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "cave.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{

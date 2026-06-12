@@ -14,6 +14,7 @@ qt_add_executable(SoftwareDev_Exam
     status.h status.cpp
     statuseffect.h statuseffect.cpp
     item.h item.cpp
+    cave.h cave.cpp
 
 )
 
