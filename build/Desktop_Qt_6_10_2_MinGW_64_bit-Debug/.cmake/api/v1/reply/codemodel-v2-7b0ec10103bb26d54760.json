@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-7f5fd17cb9ddac32409d.json",
+					"jsonFile" : "directory-.-Debug-c4b05b077dee744760b7.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SoftwareDev_Exam::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SoftwareDev_Exam-Debug-9b86e68666e47312da74.json",
+					"jsonFile" : "target-SoftwareDev_Exam-Debug-8326bcd4bd14dc04aaa5.json",
 					"name" : "SoftwareDev_Exam",
 					"projectIndex" : 0
 				},

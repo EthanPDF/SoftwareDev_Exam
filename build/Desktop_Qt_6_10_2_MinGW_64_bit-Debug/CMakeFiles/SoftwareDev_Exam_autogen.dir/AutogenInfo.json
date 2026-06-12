@@ -199,6 +199,12 @@
 			null
 		],
 		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/item.h",
+			"MU",
+			"EWIEGA46WW/moc_item.cpp",
+			null
+		],
+		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monster.h",
 			"MU",
 			"EWIEGA46WW/moc_monster.cpp",
@@ -294,6 +300,11 @@
 		],
 		[
 			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/item.cpp",
 			"MU",
 			null
 		],
