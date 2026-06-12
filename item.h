@@ -13,6 +13,8 @@ public:
 
     std::string getName();
 
+    std::string getType();
+
 private:
     std::string Name;
 

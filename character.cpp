@@ -58,15 +58,19 @@ void Character::replaceMonster(Monster m){
 
 }
 
-Monster& Character::getMonster(){ //Gets a monster to figth with
+Monster& Character::getMonster(){ //Gets a monster to fight with
     for(int i =0; i < PlayerMonsters.size(); i++){
-        std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
+        std::cout << i << ": " << PlayerMonsters[i].getName() << ", Hp: " <<
+            PlayerMonsters[i].getHp() << ", Items:\n";
+
+        PlayerMonsters[i].printItems();
+        std::cout << "\n";
     }
 
     int choice;
 
     while(true){
-        std::cout << "Which monster to fight with? ";
+        std::cout << "Which monster to fight with?\n";
         std::cin >> choice;
 
         if(choice >= 0 && choice < PlayerMonsters.size()){
@@ -92,5 +96,37 @@ void Character::resetHp(){ //Reset Hp of Character and Monsters
 
     for(int i = 0; i < PlayerMonsters.size(); i++){
         PlayerMonsters[i].setHp(PlayerMonsters[i].getMaxHp());
+    }
+}
+
+int Character::getLevel(){
+    int Total = 0;
+
+    for(int i = 0; i < PlayerMonsters.size(); i++){
+        Total += PlayerMonsters[i].getStrength();
+    }
+
+    return Total / PlayerMonsters.size();
+}
+
+void Character::giveItemToMonster(Item Item){
+    for(int i = 0; i < PlayerMonsters.size(); i++){
+        std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
+    }
+
+    int Choice;
+    std::cout << "Choose monster to give item:/n";
+    std::cin >> Choice;
+
+    if(Choice >= 0 && Choice < PlayerMonsters.size()){
+        PlayerMonsters[Choice].addItem(Item);
+
+        std::cout << Item.getName()
+                  << " given to "
+                  << PlayerMonsters[Choice].getName()
+                  << "\n";
+    }
+    else {
+        std::cout << "Invalid choice\n";
     }
 }

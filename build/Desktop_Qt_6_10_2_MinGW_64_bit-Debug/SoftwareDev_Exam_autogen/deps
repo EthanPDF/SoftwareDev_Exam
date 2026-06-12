@@ -108,11 +108,19 @@ SoftwareDev_Exam_autogen/timestamp: \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/cave.cpp \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/cave.h \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/character.cpp \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/character.h \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.cpp \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/game.h \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/item.cpp \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/item.h \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/main.cpp \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monster.cpp \
 	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/monster.h \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/status.cpp \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/status.h \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/statuseffect.cpp \
+	C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/statuseffect.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

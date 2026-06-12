@@ -6,3 +6,11 @@ Item::Item(std::string Name, StatusEffect Effect)
 Status Item::use(){
     return Effect.createStatus();
 }
+
+std::string Item::getName(){
+    return Name;
+}
+
+std::string Item::getType(){
+    return Effect.getType();
+}

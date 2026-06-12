@@ -7,12 +7,12 @@ class Battle
 {
 public:
     Battle();
-    bool startBattle(Character& c, Monster*& PlayerMonster, Monster& m);
+    bool startBattle(Character& C, Monster*& PlayerMonster, Monster& M);
 
-    void attackPhase(Character& c, Monster*& PlayerMonster, Monster& m, int turn);
+    void attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn);
 
-    bool isDefeated(Character& c);
-    bool monsterDefeated(Monster& m);
+    bool isDefeated(Character& C);
+    bool monsterDefeated(Monster& M);
 };
 
 #endif // BATTLE_H

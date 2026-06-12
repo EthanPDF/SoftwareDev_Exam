@@ -1,4 +1,5 @@
 #include "monster.h"
+#include <iostream>
 
 Monster::Monster() {
 }
@@ -22,10 +23,21 @@ void Monster::addItem(Item Item){
     Items.push_back(Item);
 }
 
-void Monster::useItem(int Index){
+void Monster::addStatus(Status Status){
+    Statuses.push_back(Status);
+}
+
+void Monster::useItem(int Index, Monster& Target, bool TargetSelf){
     if(Index >= 0 && Index < Items.size()){
         Status newStatus = Items[Index].use();
-        Statuses.push_back(newStatus);
+
+        if(TargetSelf){
+            addStatus(newStatus);
+        } else{
+            Target.addStatus(newStatus);
+        }
+
+        Items.erase(Items.begin() + Index);
     }
 }
 
@@ -45,6 +57,21 @@ void Monster::triggerOnAttack(bool &SkipTurn){
     for(int i = 0; i < Statuses.size(); i++){
         Statuses[i].onAttack(Hp, SkipTurn);
     }
+}
+
+void Monster::printItems(){
+    for (int i = 0; i < Items.size(); i++) {
+        std::cout << i << ": " << Items[i].getName() << "\n";
+    }
+
+}
+std::string Monster::getItemType(int Index){
+
+    if(Index >= 0 && Index < Items.size()){
+        return Items[Index].getType();
+    }
+    return "";
+
 }
 
 int Monster::getStrength(){

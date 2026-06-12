@@ -26,6 +26,10 @@ public:
 
     void resetHp();
 
+    int getLevel(); //2. iteration
+    void giveItemToMonster(Item Item); //2. iteration
+
+
 
 private:
     std::string Name;

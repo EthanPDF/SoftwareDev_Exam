@@ -11,6 +11,8 @@ public:
 
     Status createStatus();
 
+    std::string getType();
+
 private:
     std::string Type;
 

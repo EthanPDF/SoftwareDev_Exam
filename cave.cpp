@@ -1,5 +1,6 @@
 #include "cave.h"
 #include "battle.h"
+#include <iostream>
 
 Cave::Cave(std::vector<Monster> Monsters, Item Reward)
     : Monsters(Monsters), Reward(Reward) {}
@@ -21,4 +22,16 @@ bool Cave::startCave(Character & Player){
 
 Item Cave::getReward(){
     return Reward;
+}
+
+void Cave::printMonsters(){
+
+    for (int i = 0; i < Monsters.size(); i++) {
+        std::cout << i << ": "
+                  << Monsters[i].getName()
+                  << " (HP: " << Monsters[i].getHp()
+                  << ", STR: " << Monsters[i].getStrength()
+                  << ")\n";
+
+    }
 }

@@ -103,7 +103,6 @@ void Game::fight(){ //Fight method, uses the battle logic to start and fight fig
     if(PlayerWon){
         std::cout << "You win!\n";
 
-        Player.resetHp();
         std::cout << "Hp reset!\n";
 
         std::cout << "Add monster? (y/n)";
@@ -118,6 +117,7 @@ void Game::fight(){ //Fight method, uses the battle logic to start and fight fig
         resetEnemies();
         createCharacter();
     }
+    Player.resetHp();
 }
 
 
@@ -128,4 +128,83 @@ bool Game::allMonstersDefeated(){
         }
     }
     return true;
+}
+
+Cave Game::generateCave(){
+    int Level = Player.getLevel();
+
+    std::vector<Monster> CaveMonsters;
+
+    int numMonsters = 2 + (Level / 4);
+
+    for(int i = 0; i < numMonsters; i++){
+
+        int Hp = 5 + (Level * 2);
+        int Strength = Level;
+
+        CaveMonsters.push_back(Monster("caveMonster", Hp, Strength));
+    }
+
+    //Random reward generator below
+    std::vector<std::string> Types = {
+        "poison", "heal", "freeze", "cursed", "paralyzed"
+    };
+
+    int index = rand() % Types.size();
+    std::string chosenType = Types[index];
+
+    int damage = 0;
+    int duration = 0;
+    int chance = 100;
+
+    if (chosenType == "poison") {
+        damage = 2 + Level;
+        duration = 3 + (Level / 2);
+    }
+    else if (chosenType == "heal") {
+        damage = 3 + Level;
+        duration = 1;
+    }
+    else if (chosenType == "freeze") {
+        duration = 2 + (Level / 3);
+        chance = 40 + Level;
+    }
+    else if (chosenType == "cursed") {
+        damage = 2 + Level;
+        duration = 3;
+    }
+    else if (chosenType == "paralyzed") {
+        duration = 2 + (Level / 2);
+        chance = 30 + Level;
+    }
+
+    StatusEffect Effect(chosenType, damage, duration, chance);
+
+    std::string name = chosenType + " potion";
+
+    Item reward(name, Effect);
+
+    return Cave(CaveMonsters, reward);
+}
+
+void Game::enterCave(){
+    Cave Cave = generateCave();
+
+    std::cout << "Monsters in cave: ";
+    Cave.printMonsters();
+
+    bool Completed = Cave.startCave(Player);
+
+    if(Completed){
+        std::cout << "Cave completed!\n";
+
+        Player.resetHp();
+
+        Item Reward = Cave.getReward();
+        Player.giveItemToMonster(Reward);
+    } else {
+        std::cout << "You died\n";
+        createCharacter();
+    }
+
 }

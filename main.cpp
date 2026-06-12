@@ -10,8 +10,9 @@ int main() {
 
     while (true) {
         std::cout << "\n--- MENU ---\n";
-        std::cout << "1. Fight\n";
-        std::cout << "2. Leave\n";
+        std::cout << "1. Fight monsters on plateau\n";
+        std::cout << "2. Enter Cave\n";
+        std::cout << "3. Leave\n";
 
         int choice;
         std::cin >> choice;
@@ -20,6 +21,9 @@ int main() {
             game.fight();
         }
         else if (choice == 2) {
+            game.enterCave();
+        }
+        else if (choice == 3) {
             std::cout << "Goodbye!\n";
             break;
         }

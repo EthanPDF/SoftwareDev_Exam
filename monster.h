@@ -12,10 +12,16 @@ public:
 
     int getHp();
     void setHp(int Hp);
+    // 2. iteration //
     void addItem(Item Item);
-    void useItem(int Index);
+    void addStatus(Status Status);
+    void useItem(int Index, Monster& Target, bool TargetSelf);
     void applyStatusEffect(bool &SkipTurn);
     void triggerOnAttack(bool &SkipTurn);
+    void printItems();
+
+    std::string getItemType(int Index);
+    //-------------------//
 
     int getStrength();
 

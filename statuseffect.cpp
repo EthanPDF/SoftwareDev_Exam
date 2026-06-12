@@ -6,3 +6,7 @@ StatusEffect::StatusEffect(std::string Type, int Damage, int Duration, int Chanc
 Status StatusEffect::createStatus(){
     return Status(Type, Damage, Duration, Chance);
 }
+
+std::string StatusEffect::getType(){
+    return Type;
+}

@@ -3,6 +3,7 @@
 #include <vector>
 #include "character.h"
 #include "monster.h"
+#include "cave.h"
 
 
 class Game
@@ -18,6 +19,9 @@ public:
 
     int chooseMonsterIndex();
     bool allMonstersDefeated();
+
+    Cave generateCave();
+    void enterCave();
 
 private:
     Character Player;

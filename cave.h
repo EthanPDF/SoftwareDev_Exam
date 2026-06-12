@@ -15,6 +15,8 @@ public:
     bool startCave(Character& Player);
     Item getReward();
 
+    void printMonsters();
+
 private:
     std::vector<Monster> Monsters;
 

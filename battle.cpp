@@ -4,22 +4,22 @@
 
 Battle::Battle() {}
 
-bool Battle::startBattle(Character& c, Monster*& PlayerMonster, Monster& m){
+bool Battle::startBattle(Character& C, Monster*& PlayerMonster, Monster& M){
     std::cout << "Battle start\n";
-    std::cout << c.getName() << " vs " << m.getName() << "\n";
+    std::cout << C.getName() << " vs " << M.getName() << "\n";
 
     int Turn = rand() % 2;
 
 
 
     while(true){
-        attackPhase(c, PlayerMonster, m, Turn);
-        if(monsterDefeated(m)){
-            std::cout << m.getName() << " is defeated! \n";
+        attackPhase(C, PlayerMonster, M, Turn);
+        if(monsterDefeated(M)){
+            std::cout << M.getName() << " is defeated! \n";
             return true;
         }
-        if(isDefeated(c)){
-            std::cout << c.getName() << " is defeated! You lose\n";
+        if(isDefeated(C)){
+            std::cout << C.getName() << " is defeated! You lose\n";
             return false;
         }
         Turn = 1 - Turn;
@@ -27,53 +27,104 @@ bool Battle::startBattle(Character& c, Monster*& PlayerMonster, Monster& m){
 }
 
 
-void Battle::attackPhase(Character& c, Monster*& PlayerMonster, Monster& m, int Turn){
-
+void Battle::attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn){
     if (Turn == 0) {
-        if(c.checkIfMonstersDead()){
-            int Dmg = c.getStrength();
-            m.setHp(m.getHp() - Dmg);
-            std::cout << c.getName() << " dealt " << Dmg << " dmg\n";
+        bool SkipTurn = false;
+        PlayerMonster->applyStatusEffect(SkipTurn);
 
-        }else if(PlayerMonster->getHp()<=0){ //Swap monster after death
-            std::cout << PlayerMonster->getName() << " Has been defeated!";
-
-            std::cout << "Return: " << PlayerMonster->getName() << "!\n";
-            PlayerMonster = &c.getMonster();
-            std::cout << "Come out: " << PlayerMonster->getName() << "!\n";
-
-        } else { //Regular attack
-        int Dmg = PlayerMonster->getStrength();
-        m.setHp(m.getHp() - Dmg);
-
-        std::cout << c.getName() << "'s Monster: " << PlayerMonster->getName()
-                  << " dealt " << Dmg << " dmg\n";
+        if(SkipTurn){
+            std::cout <<PlayerMonster->getName() << " skips turn!\n";
+            return;
         }
 
+        if(C.checkIfMonstersDead()){
+            int Dmg = C.getStrength();
+            M.setHp(M.getHp() - Dmg);
+            std::cout << C.getName() << " dealt " << Dmg << " dmg\n";
+            return;
+
+        }
+
+        if(PlayerMonster->getHp()<=0){ //Swap monster after death
+            std::cout << PlayerMonster->getName() << " Has been defeated!\n";
+
+            std::cout << "Return: " << PlayerMonster->getName() << "!\n";
+            PlayerMonster = &C.getMonster();
+            std::cout << "Come out: " << PlayerMonster->getName() << "!\n";
+        }
+
+        //Regular attack
+            std::cout << "1: Attack\n2: Use Item\n";
+            int Choice;
+            std::cin >> Choice;
+
+        if(Choice == 1){
+
+            PlayerMonster->triggerOnAttack(SkipTurn);
+            if(SkipTurn){
+                std::cout << "Attack prevented!\n";
+                return;
+                }
+
+            int Dmg = PlayerMonster->getStrength();
+            M.setHp(M.getHp() - Dmg);
+            std::cout << C.getName() << "'s Monster: " << PlayerMonster->getName()
+                        << " dealt " << Dmg << " dmg\n";
+
+            } else if(Choice == 2){
+                int ItemIndex;
+                PlayerMonster->printItems();
+                std::cin >> ItemIndex;
+
+                std::string Type = PlayerMonster->getItemType(ItemIndex);
+
+                if(Type == "heal"){
+                    PlayerMonster->useItem(ItemIndex, M, true);
+                } else{
+                   PlayerMonster->useItem(ItemIndex, M, false);
+                }
+
+                std::cout << "Item Used!\n";
+            }
+
     } else {
-        int Dmg = m.getStrength();
+        bool SkipTurn = false;
+
+        M.applyStatusEffect(SkipTurn);
+
+        if(SkipTurn){
+            std::cout << M.getName() << " skips turn!\n";
+            return;
+        }
+
+        int Dmg = M.getStrength();
+        M.triggerOnAttack(SkipTurn);
+        if(SkipTurn){
+            std::cout << M.getName() << " skips turn!\n";
+            return;
+        }
 
         if (PlayerMonster->getHp() > 0) {
             // attack player's monster
             PlayerMonster->setHp(PlayerMonster->getHp() - Dmg);
 
-            std::cout << m.getName()
+            std::cout << M.getName()
                       << " dealt " << Dmg
                       << " dmg to " << PlayerMonster->getName() << "\n";
         } else {
-            c.setHp(c.getHp() - Dmg);
+            C.setHp(C.getHp() - Dmg);
 
-            std::cout << m.getName()
+            std::cout << M.getName()
                       << " dealt " << Dmg
-                      << " dmg to " << c.getName() << "\n";
+                      << " dmg to " << C.getName() << "\n";
         }
     }
 }
 
-bool Battle::isDefeated(Character& c){
-    return c.getHp() <= 0;
+bool Battle::isDefeated(Character& C){
+    return C.getHp() <= 0;
 }
 
-bool Battle::monsterDefeated(Monster& m){
-    return m.getHp() <= 0;
+bool Battle::monsterDefeated(Monster& M){
+    return M.getHp() <= 0;
 }
