@@ -1,5 +1,6 @@
 #include "status.h"
 #include <iostream>
+#include <cstdlib>
 
 Status::Status(std::string Type, int Damage, int Duration, int Chance)
     :  Type(Type), Damage(Damage), Duration(Duration), Chance(Chance) {}
