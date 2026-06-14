@@ -103,6 +103,12 @@ build CMakeFiles/SoftwareDev_Exam.dir/cave.cpp.obj: CXX_COMPILER__SoftwareDev_Ex
   OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
   OBJECT_FILE_DIR = CMakeFiles\SoftwareDev_Exam.dir
 
+build CMakeFiles/SoftwareDev_Exam.dir/database.cpp.obj: CXX_COMPILER__SoftwareDev_Exam_unscanned_Debug C$:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/database.cpp || cmake_object_order_depends_target_SoftwareDev_Exam
+  DEP_FILE = CMakeFiles\SoftwareDev_Exam.dir\database.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir
+  OBJECT_FILE_DIR = CMakeFiles\SoftwareDev_Exam.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SoftwareDev_Exam
@@ -111,7 +117,7 @@ build CMakeFiles/SoftwareDev_Exam.dir/cave.cpp.obj: CXX_COMPILER__SoftwareDev_Ex
 #############################################
 # Link the executable SoftwareDev_Exam.exe
 
-build SoftwareDev_Exam.exe: CXX_EXECUTABLE_LINKER__SoftwareDev_Exam_Debug CMakeFiles/SoftwareDev_Exam.dir/main.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/character.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/game.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/battle.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/status.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/statuseffect.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/item.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/cave.cpp.obj
+build SoftwareDev_Exam.exe: CXX_EXECUTABLE_LINKER__SoftwareDev_Exam_Debug CMakeFiles/SoftwareDev_Exam.dir/main.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/character.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/monster.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/game.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/battle.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/status.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/statuseffect.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/item.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/cave.cpp.obj CMakeFiles/SoftwareDev_Exam.dir/database.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SoftwareDev_Exam.dir

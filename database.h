@@ -1,7 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include <sqlite3.h>
+#include "sqlite3.h"
 #include <string>
 #include "character.h"
 
@@ -17,7 +17,7 @@ public:
 
     void recordMonsterKill(std::string MonsterName);
 
-    void recordItemUse(std::string Type);
+    void recordItemUse(int PlayerId, std::string Type);
 
 
 private:

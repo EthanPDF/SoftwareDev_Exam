@@ -1,15 +1,18 @@
 #include <iostream>
 #include <ctime>
 #include "game.h"
+#include "database.h"
 
 int main() {
+    std::cout << "Program started!\n";
     srand(time(0));
 
     Database db;
     db.open();
     db.createTables();
 
-    Game game;
+    Game game(db);
+
     game.createCharacter();
 
     while (true) {
@@ -34,12 +37,5 @@ int main() {
         else {
             std::cout << "Invalid input\n";
         }
-
-        if (game.allMonstersDefeated()) {
-            std::cout << "\nYou defeated all enemies! You win!\n";
-            break;
-        }
     }
-
-    return 0;
 }

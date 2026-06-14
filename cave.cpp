@@ -5,13 +5,13 @@
 Cave::Cave(std::vector<Monster> Monsters, Item Reward)
     : Monsters(Monsters), Reward(Reward) {}
 
-bool Cave::startCave(Character & Player){
+bool Cave::startCave(Character & Player, Database& db){
     Battle Battle;
 
     for(int i = 0; i < Monsters.size(); i++){
         Monster* Chosen = &Player.getMonster();
 
-        bool won = Battle.startBattle(Player, Chosen, Monsters[i]);
+        bool won = Battle.startBattle(Player, Chosen, Monsters[i], db);
 
         if(!won){
             return false;

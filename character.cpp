@@ -34,15 +34,15 @@ void Character::setStrength(int Strength){
     this -> Strength = Strength;
 }
 
-void Character::addMonster(Monster m){
+void Character::addMonster(Monster M){
     if(PlayerMonsters.size() < 4){
-        PlayerMonsters.push_back(m);
+        PlayerMonsters.push_back(M);
     } else{
         std::cout << "Max limit reached, replace a monster\n";
-        replaceMonster(m);
+        replaceMonster(M);
     }
 }
-void Character::replaceMonster(Monster m){
+void Character::replaceMonster(Monster M){
     for(int i =0; i < PlayerMonsters.size(); i++){
         std::cout << i << ": " << PlayerMonsters[i].getName() << "\n";
     }
@@ -51,7 +51,7 @@ void Character::replaceMonster(Monster m){
     std::cout << "Which monster to replace? ";
     std::cin >> choice;
     if (choice >= 0 && choice < PlayerMonsters.size()){
-        PlayerMonsters[choice] = m;
+        PlayerMonsters[choice] = M;
     } else{
         std::cout << "Invalid \n";
     }
@@ -129,4 +129,12 @@ void Character::giveItemToMonster(Item Item){
     else {
         std::cout << "Invalid choice\n";
     }
+}
+
+int Character::getId() {
+    return Id;
+}
+
+void Character::setId(int Id) {
+    this->Id = Id;
 }

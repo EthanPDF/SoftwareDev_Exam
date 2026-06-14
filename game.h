@@ -4,12 +4,12 @@
 #include "character.h"
 #include "monster.h"
 #include "cave.h"
-
+#include "database.h"
 
 class Game
 {
 public:
-    Game();
+    Game(Database& db);
     bool startWithMonsters();
     bool leave();
 
@@ -26,6 +26,8 @@ public:
 private:
     Character Player;
     std::vector<Monster> MonstersInGame;
+
+    Database& db;
 
 };
 

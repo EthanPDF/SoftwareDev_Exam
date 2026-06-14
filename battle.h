@@ -2,6 +2,7 @@
 #define BATTLE_H
 #include "character.h"
 #include "monster.h"
+#include "database.h"
 
 class Battle
 {

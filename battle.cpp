@@ -86,7 +86,7 @@ void Battle::attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int 
                    PlayerMonster->useItem(ItemIndex, M, false);
                 }
 
-                db.recordItemUse(Type);
+                db.recordItemUse(C.getId(), Type);
 
                 std::cout << "Item Used!\n";
             }

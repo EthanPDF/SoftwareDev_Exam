@@ -18,8 +18,8 @@ public:
     int getStrength();
     void setStrength(int Strength);
 
-    void addMonster(Monster m);
-    void replaceMonster(Monster m);
+    void addMonster(Monster M);
+    void replaceMonster(Monster M);
     Monster& getMonster();
 
     bool checkIfMonstersDead();
@@ -29,11 +29,14 @@ public:
     int getLevel(); //2. iteration
     void giveItemToMonster(Item Item); //2. iteration
 
+    int getId(); //3. iteration
+    void setId(int Id); //3. iteration
+
 
 
 private:
     std::string Name;
-    int Hp, Strength, MaxHp;
+    int Hp, Strength, MaxHp, Id;
     std::vector<Monster> PlayerMonsters;
 };
 

@@ -32,8 +32,7 @@ add_executable(SoftwareDev_Exam
 
     database.h
     database.cpp
+
+    sqlite3.c
+    sqlite3.h
 )
-
-find_library(SQLITE3_LIBRARY sqlite3)
-
-target_link_libraries(SoftwareDev_Exam PRIVATE ${SQLITE3_LIBRARY})

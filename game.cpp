@@ -2,8 +2,7 @@
 #include <iostream>
 #include "battle.h"
 
-Game::Game() {
-    db.open();
+Game::Game(Database& db) : db(db) {
     Player = Character("",0,0);
 
     resetEnemies();
@@ -211,7 +210,7 @@ void Game::enterCave(){
     std::cout << "Monsters in cave: ";
     Cave.printMonsters();
 
-    bool Completed = Cave.startCave(Player);
+    bool Completed = Cave.startCave(Player, db);
 
     if(Completed){
         std::cout << "Cave completed!\n";

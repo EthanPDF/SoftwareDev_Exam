@@ -316,6 +316,9 @@ Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6EntryPointPriva
 //The directory containing a CMake configuration file for Qt6.
 Qt6_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6
 
+//Path to a library.
+SQLITE3_LIBRARY:FILEPATH=SQLITE3_LIBRARY-NOTFOUND
+
 //Value Computed by CMake
 SoftwareDev_Exam_BINARY_DIR:STATIC=C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug
 
