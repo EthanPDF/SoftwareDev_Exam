@@ -3,6 +3,7 @@
 #include "battle.h"
 
 Game::Game() {
+    db.open();
     Player = Character("",0,0);
 
     resetEnemies();
@@ -35,21 +36,37 @@ void Game::resetEnemies(){//Resets monsters in game
     MonstersInGame.push_back(Monster("Dragon",100,11));
 }
 
-void Game::createCharacter(){
-    std::string Name;
-    int Hp, Strength;
+void Game::createCharacter() {
 
+    std::vector<Character> SavedPlayers = db.loadPlayers();
+
+    if (!SavedPlayers.empty()) {
+
+        std::cout << "Choose a character!:\n";
+
+        for (int i = 0; i < SavedPlayers.size(); i++) {
+            std::cout << i << ": " << SavedPlayers[i].getName() << "\n";
+        }
+
+        std::cout << SavedPlayers.size() << ": Create new player\n";
+
+        int Choice;
+        std::cin >> Choice;
+
+        if (Choice < SavedPlayers.size()) {
+            Player = SavedPlayers[Choice];
+            return;
+        }
+    }
+
+    // create new player
+    std::string Name;
     std::cout << "Choose a name: ";
     std::cin >> Name;
 
-    Hp =10;
-    Strength = 1;
+    Player = Character(Name, 10, 1);
 
-    Player = Character(Name, Hp, Strength);
-    if(startWithMonsters()){
-        Player.addMonster(Monster("Horse",4,1));
-        Player.addMonster(Monster("Horse",4,1));
-    }
+    db.savePlayer(Player);
 }
 
 bool Game::leave(){
@@ -98,9 +115,10 @@ void Game::fight(){ //Fight method, uses the battle logic to start and fight fig
 
     Battle battle;
 
-    bool PlayerWon = battle.startBattle(Player, PlayerChosen, Enemy);
+    bool PlayerWon = battle.startBattle(Player, PlayerChosen, Enemy, db);
 
     if(PlayerWon){
+        db.recordMonsterKill(Enemy.getName());
         std::cout << "You win!\n";
 
         std::cout << "Hp reset!\n";

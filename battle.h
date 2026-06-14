@@ -7,9 +7,9 @@ class Battle
 {
 public:
     Battle();
-    bool startBattle(Character& C, Monster*& PlayerMonster, Monster& M);
+    bool startBattle(Character& C, Monster*& PlayerMonster, Monster& M, Database& db);
 
-    void attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn);
+    void attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn, Database& db);
 
     bool isDefeated(Character& C);
     bool monsterDefeated(Monster& M);

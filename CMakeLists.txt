@@ -29,6 +29,9 @@ add_executable(SoftwareDev_Exam
 
     cave.cpp
     cave.h
+
+    database.h
+    database.cpp
 )
 
 find_library(SQLITE3_LIBRARY sqlite3)

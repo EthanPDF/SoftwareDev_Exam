@@ -4,7 +4,8 @@
 
 Battle::Battle() {}
 
-bool Battle::startBattle(Character& C, Monster*& PlayerMonster, Monster& M){
+bool Battle::startBattle(Character& C, Monster*& PlayerMonster, Monster& M, Database& db){
+
     std::cout << "Battle start\n";
     std::cout << C.getName() << " vs " << M.getName() << "\n";
 
@@ -13,7 +14,8 @@ bool Battle::startBattle(Character& C, Monster*& PlayerMonster, Monster& M){
 
 
     while(true){
-        attackPhase(C, PlayerMonster, M, Turn);
+        attackPhase(C, PlayerMonster, M, Turn, db);
+
         if(monsterDefeated(M)){
             std::cout << M.getName() << " is defeated! \n";
             return true;
@@ -27,7 +29,7 @@ bool Battle::startBattle(Character& C, Monster*& PlayerMonster, Monster& M){
 }
 
 
-void Battle::attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn){
+void Battle::attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int Turn, Database& db){
     if (Turn == 0) {
         bool SkipTurn = false;
         PlayerMonster->applyStatusEffect(SkipTurn);
@@ -83,6 +85,8 @@ void Battle::attackPhase(Character& C, Monster*& PlayerMonster, Monster& M, int 
                 } else{
                    PlayerMonster->useItem(ItemIndex, M, false);
                 }
+
+                db.recordItemUse(Type);
 
                 std::cout << "Item Used!\n";
             }

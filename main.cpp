@@ -5,6 +5,10 @@
 int main() {
     srand(time(0));
 
+    Database db;
+    db.open();
+    db.createTables();
+
     Game game;
     game.createCharacter();
 
