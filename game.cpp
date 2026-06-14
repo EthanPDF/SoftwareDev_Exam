@@ -204,6 +204,7 @@ void Game::enterCave(){
         Player.giveItemToMonster(Reward);
     } else {
         std::cout << "You died\n";
+        resetEnemies();
         createCharacter();
     }
 

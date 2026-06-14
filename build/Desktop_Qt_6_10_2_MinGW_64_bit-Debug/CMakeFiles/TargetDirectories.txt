@@ -1,9 +1,3 @@
 C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/SoftwareDev_Exam.dir
 C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
 C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/SoftwareDev_Exam_autogen_timestamp_deps.dir
-C:/Users/derpy/OneDrive/Documents/SoftwareDev_Exam/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/SoftwareDev_Exam_autogen.dir

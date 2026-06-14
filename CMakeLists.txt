@@ -1,32 +1,16 @@
 cmake_minimum_required(VERSION 3.19)
 project(SoftwareDev_Exam LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core)
+set(CMAKE_CXX_STANDARD 17)
 
-qt_standard_project_setup()
-
-qt_add_executable(SoftwareDev_Exam
+add_executable(SoftwareDev_Exam
     main.cpp
-    character.h character.cpp
-    monster.h monster.cpp
-    game.h game.cpp
-    battle.h battle.cpp
-    status.h status.cpp
-    statuseffect.h statuseffect.cpp
-    item.h item.cpp
-    cave.h cave.cpp
-
-)
-
-target_link_libraries(SoftwareDev_Exam
-    PRIVATE
-        Qt::Core
-)
-
-include(GNUInstallDirs)
-
-install(TARGETS SoftwareDev_Exam
-    BUNDLE  DESTINATION .
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    character.cpp
+    monster.cpp
+    game.cpp
+    battle.cpp
+    status.cpp
+    statuseffect.cpp
+    item.cpp
+    cave.cpp
 )

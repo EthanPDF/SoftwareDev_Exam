@@ -20,8 +20,8 @@ public:
     int chooseMonsterIndex();
     bool allMonstersDefeated();
 
-    Cave generateCave();
-    void enterCave();
+    Cave generateCave(); //2. iteration
+    void enterCave(); //2. iteration
 
 private:
     Character Player;
