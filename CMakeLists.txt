@@ -14,3 +14,7 @@ add_executable(SoftwareDev_Exam
     item.cpp
     cave.cpp
 )
+
+find_library(SQLITE3_LIBRARY sqlite3)
+
+target_link_libraries(SoftwareDev_Exam PRIVATE ${SQLITE3_LIBRARY})
