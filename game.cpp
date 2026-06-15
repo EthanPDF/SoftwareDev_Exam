@@ -85,6 +85,7 @@ void Game::createCharacter() {
 
     db.savePlayer(Player);
 }
+}
 
 bool Game::leave(){
 
