@@ -65,6 +65,11 @@ void Monster::printItems(){
     }
 
 }
+
+void Monster::resetStatus(){
+    Statuses.clear();
+}
+
 std::string Monster::getItemType(int Index){
 
     if(Index >= 0 && Index < Items.size()){

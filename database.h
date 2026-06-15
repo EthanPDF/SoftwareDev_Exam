@@ -19,6 +19,8 @@ public:
 
     void recordItemUse(int PlayerId, std::string Type);
 
+    void printStats();
+
 
 private:
     sqlite3* db;

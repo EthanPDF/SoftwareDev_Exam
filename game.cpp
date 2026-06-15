@@ -48,6 +48,7 @@ void Game::createCharacter() {
         }
 
         std::cout << SavedPlayers.size() << ": Create new player\n";
+        std::cout << SavedPlayers.size() + 1 << ": Delete player\n";
 
         int Choice;
         std::cin >> Choice;
@@ -55,8 +56,20 @@ void Game::createCharacter() {
         if (Choice < SavedPlayers.size()) {
             Player = SavedPlayers[Choice];
             return;
+        } else if (Choice == SavedPlayers.size() + 1) {
+
+        std::cout << "Enter player to delete: ";
+        int Del;
+        std::cin >> Del;
+
+        if (Del >= 0 && Del < SavedPlayers.size()) {
+            db.deletePlayer(SavedPlayers[Del].getId());
+            std::cout << "Player deleted!\n";
         }
+
+        return createCharacter();  // reload menu
     }
+
 
     // create new player
     std::string Name;
@@ -114,7 +127,7 @@ void Game::fight(){ //Fight method, uses the battle logic to start and fight fig
     std::cout << "What enemy to fight? ";
     int index = chooseMonsterIndex();
     Monster& Enemy = MonstersInGame[index];
-    std::cout << "Which monster to fight with? ";
+    std::cout << "Which monster to fight with? \n";
     Monster* PlayerChosen = &Player.getMonster();
 
     Battle battle;

@@ -19,6 +19,7 @@ public:
     void applyStatusEffect(bool &SkipTurn);
     void triggerOnAttack(bool &SkipTurn);
     void printItems();
+    void resetStatus();
 
     std::string getItemType(int Index);
     //-------------------//

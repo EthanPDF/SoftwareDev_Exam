@@ -35,6 +35,8 @@ void Character::setStrength(int Strength){
 }
 
 void Character::addMonster(Monster M){
+    M.resetStatus();
+
     if(PlayerMonsters.size() < 4){
         PlayerMonsters.push_back(M);
     } else{
@@ -115,7 +117,7 @@ void Character::giveItemToMonster(Item Item){
     }
 
     int Choice;
-    std::cout << "Choose monster to give item:/n";
+    std::cout << "Choose monster to give item:\n";
     std::cin >> Choice;
 
     if(Choice >= 0 && Choice < PlayerMonsters.size()){

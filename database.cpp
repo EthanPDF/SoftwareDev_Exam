@@ -105,3 +105,27 @@ void Database::createTables() {
     sqlite3_exec(db, monsterKillsTable, 0, 0, 0);
     sqlite3_exec(db, itemUsageTable, 0, 0, 0);
 }
+
+void Database::printStats() {
+
+    std::cout << "\n--- Monster Kills ---\n";
+
+    const char* Sql1 = "SELECT * FROM MonsterKills;";
+    sqlite3_exec(db, Sql1, [](void*, int argc, char** argv, char** colName) {
+        for (int i = 0; i < argc; i++)
+            std::cout << colName[i] << ": " << argv[i] << " | ";
+        std::cout << "\n";
+        return 0;
+    }, 0, 0);
+
+
+    std::cout << "\n--- Item Usage ---\n";
+
+    const char* Sql2 = "SELECT * FROM ItemUsage;";
+    sqlite3_exec(db, Sql2, [](void*, int argc, char** argv, char** colName) {
+        for (int i = 0; i < argc; i++)
+            std::cout << colName[i] << ": " << argv[i] << " | ";
+        std::cout << "\n";
+        return 0;
+    }, 0, 0);
+}
