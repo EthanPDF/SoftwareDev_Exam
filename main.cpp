@@ -4,7 +4,7 @@
 #include "database.h"
 
 int main() {
-    std::cout << "Program started!\n";
+    std::cout << "Program started!\n" << std::endl;
     srand(time(0));
 
     Database db;

@@ -79,3 +79,29 @@ void Database::recordItemUse(int PlayerId, std::string Type) {
 
     sqlite3_exec(db, Sql.c_str(), 0, 0, 0);
 }
+
+void Database::createTables() {
+
+    const char* playerTable =
+        "CREATE TABLE IF NOT EXISTS Player ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "name TEXT,"
+        "hp INTEGER,"
+        "strength INTEGER);";
+
+    const char* monsterKillsTable =
+        "CREATE TABLE IF NOT EXISTS MonsterKills ("
+        "monster_name TEXT PRIMARY KEY,"
+        "kill_count INTEGER);";
+
+    const char* itemUsageTable =
+        "CREATE TABLE IF NOT EXISTS ItemUsage ("
+        "player_id INTEGER,"
+        "item_type TEXT,"
+        "usage_count INTEGER,"
+        "PRIMARY KEY(player_id, item_type));";
+
+    sqlite3_exec(db, playerTable, 0, 0, 0);
+    sqlite3_exec(db, monsterKillsTable, 0, 0, 0);
+    sqlite3_exec(db, itemUsageTable, 0, 0, 0);
+}

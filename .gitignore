@@ -1,0 +1,18 @@
+# Build files
+build/
+
+# Compiled files
+*.exe
+*.o
+*.obj
+
+# Database
+*.db
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+
+# Logs
+*.log
+``
