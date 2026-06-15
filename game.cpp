@@ -65,6 +65,11 @@ void Game::createCharacter() {
 
     Player = Character(Name, 10, 1);
 
+    if(startWithMonsters()){
+        Player.addMonster(Monster("Horse", 4, 1));
+        Player.addMonster(Monster("Horse", 4, 1));
+    }
+
     db.savePlayer(Player);
 }
 
